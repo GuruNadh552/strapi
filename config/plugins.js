@@ -1,9 +1,8 @@
-import { config } from "dotenv";
-config();
+require("dotenv").config();
 module.exports = ({ env }) => ({
   "users-permissions": {
     config: {
-      jwtSecret: env("JWT_SECRET", process.env.JWT_TOKEN),
+      jwtSecret: env("JWT_SECRET"),
     },
   },
   upload: {
