@@ -28,8 +28,8 @@ module.exports = ({ env }) => ({
         host: env("SMTP_HOST", process.env.SMTP_HOST),
         port: env("SMTP_PORT", process.env.SMTP_PORT),
         auth: {
-          user: process.env.SMTP_USERNAME,
-          password: process.env.SMTP_PASSWORD,
+          user: env("SMTP_USERNAME", process.env.SMTP_USERNAME),
+          pass: env("SMTP_PASSWORD", process.env.SMTP_PASSWORD),
         },
         secure: true,
         // ... any custom nodemailer options
